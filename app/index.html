@@ -3,23 +3,101 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI trophy checklist</title>
+<title>Leonida Ledger — GTA VI Trophy Guide &amp; Tracker</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>GTA VI trophy checklist</h1>
-  <p id="progress">0 of 55 earned</p>
+<header class="masthead">
+  <div class="masthead-title">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5</p>
+    <h1>Leonida Ledger</h1>
+    <p class="subtitle">Every trophy, its guide and its sources — with a tracker that remembers your run.</p>
+  </div>
+  <div class="progress-card" id="progress-card">
+    <p class="progress-count"><span id="progress-earned">0</span><span class="progress-of"> / 55 earned</span></p>
+    <div class="progress-bar" role="progressbar" aria-label="Trophies earned"><div class="progress-fill" id="progress-fill"></div></div>
+    <p class="progress-grades" id="progress-grades"></p>
+  </div>
 </header>
-<div class="controls">
-  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
-  <button id="export" type="button">Export progress</button>
-  <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
-</div>
-<table>
-  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>How to get it</th></tr></thead>
-  <tbody id="rows"></tbody>
-</table>
-<script type="module" src="app.js"></script>
+
+<nav class="tabs" aria-label="Sections">
+  <a class="tab" href="#/checklist" data-tab="checklist">Checklist</a>
+  <a class="tab" href="#/roadmap" data-tab="roadmap">Roadmap to Platinum</a>
+  <a class="tab" href="#/missable" data-tab="missable">Missables</a>
+  <a class="tab" href="#/about" data-tab="about">Sources &amp; method</a>
+</nav>
+
+<section id="view-checklist" class="view">
+  <div class="toolbar">
+    <label class="search">Search <input id="search" type="search" placeholder="Name, mission or keyword…" autocomplete="off"></label>
+    <div class="chips" id="kind-chips" role="group" aria-label="Filter by kind">
+      <button type="button" data-kind="all" class="chip active">All 55</button>
+      <button type="button" data-kind="story" class="chip">Story</button>
+      <button type="button" data-kind="missable" class="chip">Missable</button>
+      <button type="button" data-kind="collectible" class="chip">Collectibles</button>
+      <button type="button" data-kind="activity" class="chip">Activities</button>
+      <button type="button" data-kind="online" class="chip">Online</button>
+    </div>
+    <label class="grade-pick">Grade
+      <select id="grade">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label class="toggle"><input id="hide-earned" type="checkbox"> Hide earned</label>
+    <label class="toggle spoiler"><input id="spoilers" type="checkbox" checked> Hide story spoilers</label>
+    <div class="io">
+      <button id="export" type="button">Export progress</button>
+      <label class="import-btn">Import progress <input id="import" type="file" accept="application/json"></label>
+      <button id="reset" type="button">Reset</button>
+    </div>
+  </div>
+  <p class="list-meta" id="list-meta"></p>
+  <div class="split">
+    <ul class="trophy-list" id="trophy-list"></ul>
+    <aside class="detail" id="detail" aria-live="polite"></aside>
+  </div>
+</section>
+
+<section id="view-roadmap" class="view" hidden>
+  <h2>Roadmap to the platinum</h2>
+  <p class="lede">One playthrough, about 200 hours by PowerPyx's estimate (250+ by Push Square's). Three stages, in order — and the only thing you must do early is in Stage 1.</p>
+  <div id="roadmap-stages"></div>
+  <div class="callout">
+    <h3>Save advice</h3>
+    <p>Missions cannot be replayed. The game gives you 15 manual save slots plus one autosave, so keep a save at the start and end of each chapter and rotate the rest during free roam. Cheats disable trophies and stop the game saving — keep them off the file you use for this run.</p>
+  </div>
+</section>
+
+<section id="view-missable" class="view" hidden>
+  <h2>Missable trophies</h2>
+  <p class="lede">Built from the official descriptions and the published guides. Only one trophy is flagged as possibly missable — and it is easy to protect.</p>
+  <div id="missable-list"></div>
+  <h3>Looks missable, but is not</h3>
+  <ul class="plain-list" id="not-missable-list"></ul>
+  <div class="callout">
+    <h3>One warning that is not about trophies</h3>
+    <p>PowerPyx reports the Irredeemable criminal profile is permanent and makes the police more aggressive. You can still earn everything, but it makes the cleanup harder — so check your criminal profile before going on a rampage.</p>
+  </div>
+</section>
+
+<section id="view-about" class="view" hidden>
+  <h2>Sources &amp; method</h2>
+  <p class="lede">This guide is written in its own words for this entry. It draws on the published guides below and cites them beside each trophy — a source is cited, never copied. The official names and descriptions are shown as PlayStation publishes them.</p>
+  <h3>Where each fact comes from</h3>
+  <ul class="plain-list" id="source-list"></ul>
+  <h3>What is certain, and what is not yet</h3>
+  <p>The list itself — 55 trophies, 1 platinum, 2 gold, 6 silver, 46 bronze, 28 hidden — is agreed on by every published list. The methods come from PowerPyx and the other guides, which were written in launch week; five trophies are marked in their guides as not yet confirmed, and this guide says so on each of them instead of guessing. No guide here was checked in the game by its author: where a step rests only on the official description, the guide says that too.</p>
+  <h3>What this guide is not</h3>
+  <p>No Rockstar Games logo, artwork, box art or screenshot of the game is used anywhere — the look is this guide's own. The app is static files that work with the network off: it fetches only its own data files, saves your progress in your browser (localStorage), and sends nothing anywhere.</p>
+</section>
+
+<footer>
+  <p>Leonida Ledger — an independent, fan-made guide. Grand Theft Auto and GTA are trademarks of Take-Two Interactive; this guide is not affiliated with or endorsed by Rockstar Games. Trophy names and descriptions as published on PlayStation.</p>
+</footer>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
