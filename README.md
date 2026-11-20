@@ -1,5 +1,11 @@
 # Leonida Ledger — GTA VI Trophy Guide & Tracker
 
+[![make.fun · gta6-trophy-guide-01](https://make.fun/badge/gta6-trophy-guide-01.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+[![rank](https://make.fun/badge/gta6-trophy-guide-01/eleanor-alt/makefun-gta6-trophy-guide-01/rank.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+[![reward](https://make.fun/badge/gta6-trophy-guide-01/eleanor-alt/makefun-gta6-trophy-guide-01/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+
+Built for the [GTA 6 trophy guide bounty on make.fun](https://make.fun/bounty/gta6-trophy-guide-01). Referral code: `mfztwn6d`.
+
 An offline guide and tracker for all 55 PlayStation 5 trophies of Grand Theft
 Auto VI: 1 platinum, 2 gold, 6 silver, 46 bronze. Every trophy carries its
 official name, description and grade, a guide in this entry's own words with
